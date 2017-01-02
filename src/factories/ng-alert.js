@@ -23,15 +23,13 @@ angular.module('ngAlerts').factory('NgAlert', [
                 id: ngAlertsId.create(),
                 msg: '',
                 type: 'default',
-                time: Date.now(),
-                resourceUri: ''
+                time: Date.now()
             }, args);
 
             this.id = params.id;
             this.msg = params.msg;
             this.type = params.type;
             this.time = params.time;
-            this.resourceUri = params.resourceUri;
         };
 
         /**

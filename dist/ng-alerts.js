@@ -283,15 +283,13 @@ angular.module('ngAlerts').factory('NgAlert', [
                 id: ngAlertsId.create(),
                 msg: '',
                 type: 'default',
-                time: Date.now(),
-                resourceUri: ''
+                time: Date.now()
             }, args);
 
             this.id = params.id;
             this.msg = params.msg;
             this.type = params.type;
             this.time = params.time;
-            this.resourceUri = params.resourceUri;
         };
 
         /**
@@ -528,15 +526,12 @@ angular.module('ngAlerts').run(['$templateCache', function($templateCache) {
     "                <tr ng-repeat=\"alert in alerts\" ng-class=\"alert.type\">\n" +
     "                    <td>\n" +
     "                        <small>{{alert.getTime()}}</small><br />\n" +
-    "                        {{alert.msg}}\n" +
+    "                        <div ng-bind-html='alert.msg'> </div>\n" +
     "                    </td>\n" +
     "                    <td>\n" +
     "                        <button ng-click=\"remove(alert.id, $event)\" type=\"button\" class=\"close\" aria-label=\"Close\">\n" +
     "                            <span aria-hidden=\"true\">&times;</span>\n" +
     "                        </button>\n" +
-    "                    </td>\n" +
-    "                    <td>\n" +
-    "                    <a href=\"{{alert.resourceUri}}\"> resource </a>\n" +
     "                    </td>\n" +
     "                </tr>\n" +
     "            </tbody>\n" +
