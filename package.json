@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrsteele/ng-alerts.git"
+    "url": "git+https://github.com/feup-infolab-rdm/ng-alerts.git"
   },
   "keywords": [
     "angular",
