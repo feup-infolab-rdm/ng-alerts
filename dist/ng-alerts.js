@@ -283,13 +283,15 @@ angular.module('ngAlerts').factory('NgAlert', [
                 id: ngAlertsId.create(),
                 msg: '',
                 type: 'default',
-                time: Date.now()
+                time: Date.now(),
+                resourceUri: ''
             }, args);
 
             this.id = params.id;
             this.msg = params.msg;
             this.type = params.type;
             this.time = params.time;
+            this.resourceUri = params.resourceUri;
         };
 
         /**
@@ -532,6 +534,9 @@ angular.module('ngAlerts').run(['$templateCache', function($templateCache) {
     "                        <button ng-click=\"remove(alert.id, $event)\" type=\"button\" class=\"close\" aria-label=\"Close\">\n" +
     "                            <span aria-hidden=\"true\">&times;</span>\n" +
     "                        </button>\n" +
+    "                    </td>\n" +
+    "                    <td>\n" +
+    "                    <a href=\"{{alert.resourceUri}}\"> resource </a>\n" +
     "                    </td>\n" +
     "                </tr>\n" +
     "            </tbody>\n" +
